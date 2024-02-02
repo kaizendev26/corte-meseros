@@ -157,49 +157,51 @@ function juntarCortes(corteMarisco, corteCena) {
   for (const corte of corteMarisco) {
     let mesero = corte.mesero;
     let corteCenaEncontrado = corteCena.find((corte) => corte.mesero == mesero);
-    let porcentajeMarisco = corte.venta * PORCENTAJE_MARISCO;
-    let porcentajeCena =
-      (corteCenaEncontrado.venta - corte.venta) * PORCENTAJE_CENA;
-    let comisiones = obtenerComisionesPorMesero(corteCenaEncontrado);
-    let comisionesMXN = comisiones * VALOR_COMISION;
-    let pagarACocina = Math.round(porcentajeMarisco + porcentajeCena);
+    if (corteCenaEncontrado != undefined) {
+      let porcentajeMarisco = corte.venta * PORCENTAJE_MARISCO;
+      let porcentajeCena =
+        (corteCenaEncontrado.venta - corte.venta) * PORCENTAJE_CENA;
+      let comisiones = obtenerComisionesPorMesero(corteCenaEncontrado);
+      let comisionesMXN = comisiones * VALOR_COMISION;
+      let pagarACocina = Math.round(porcentajeMarisco + porcentajeCena);
 
-    let tarjetas = 0;
-    let items = JSON.parse(localStorage.getItem("tarjetas"));
-    if (items != null) {
-      let tarjetasMesero = items.find((item) => item.mesero == mesero);
-      tarjetas = tarjetasMesero.tarjetas.reduce(
-        (total, item) => total + parseFloat(item == "" ? 0 : item),
-        0
+      let tarjetas = 0;
+      let items = JSON.parse(localStorage.getItem("tarjetas"));
+      if (items != null) {
+        let tarjetasMesero = items.find((item) => item.mesero == mesero);
+        tarjetas = tarjetasMesero.tarjetas.reduce(
+          (total, item) => total + parseFloat(item == "" ? 0 : item),
+          0
+        );
+      }
+
+      let tarjetas5Porciento = tarjetas - tarjetas * 0.05;
+
+      let resultado = Math.round(
+        pagarACocina - (comisionesMXN + tarjetas5Porciento)
       );
+
+      resultado =
+        resultado < 0
+          ? `Te pago ${mxn(Math.abs(resultado))}`
+          : resultado > 0
+          ? `Me pagas ${mxn(resultado)}`
+          : "No pagas";
+
+      corteFinal.push({
+        mesero,
+        ventaMarisco: corte.venta,
+        ventaFinal: corteCenaEncontrado.venta,
+        porcentajeMarisco,
+        porcentajeCena,
+        comisiones,
+        comisionesMXN,
+        tarjetas,
+        tarjetas5Porciento,
+        pagarACocina,
+        resultado,
+      });
     }
-
-    let tarjetas5Porciento = tarjetas - tarjetas * 0.05;
-
-    let resultado = Math.round(
-      pagarACocina - (comisionesMXN + tarjetas5Porciento)
-    );
-
-    resultado =
-      resultado < 0
-        ? `Te pago ${mxn(Math.abs(resultado))}`
-        : resultado > 0
-        ? `Me pagas ${mxn(resultado)}`
-        : "No pagas";
-
-    corteFinal.push({
-      mesero,
-      ventaMarisco: corte.venta,
-      ventaFinal: corteCenaEncontrado.venta,
-      porcentajeMarisco,
-      porcentajeCena,
-      comisiones,
-      comisionesMXN,
-      tarjetas,
-      tarjetas5Porciento,
-      pagarACocina,
-      resultado,
-    });
   }
 
   return corteFinal;

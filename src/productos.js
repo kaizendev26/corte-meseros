@@ -124,7 +124,7 @@ const productos = [
   {
     clave: "266",
     producto: "COPA DE VINO",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "491",
@@ -154,7 +154,7 @@ const productos = [
   {
     clave: "37",
     producto: "SAMBUCA VACCARI",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "351",
@@ -179,12 +179,12 @@ const productos = [
   {
     clave: "98",
     producto: "CONTROY",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "127",
     producto: "ZAMBUCA NGO.",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "143",
