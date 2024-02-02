@@ -84,7 +84,7 @@ const productos = [
   {
     clave: "19",
     producto: "ABSOLUT AZUL",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "91",
@@ -99,7 +99,7 @@ const productos = [
   {
     clave: "23",
     producto: "CHIVAS",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "24",
@@ -119,7 +119,7 @@ const productos = [
   {
     clave: "224",
     producto: "LAMBRUSCO 750",
-    comision: "0",
+    comision: "6",
   },
   {
     clave: "266",
@@ -129,27 +129,27 @@ const productos = [
   {
     clave: "491",
     producto: "CUATRO SOLES",
-    comision: "0",
+    comision: "6",
   },
   {
     clave: "520",
     producto: "RESERVADO CONCHA",
-    comision: "0",
+    comision: "6",
   },
   {
     clave: "34",
     producto: "BAYLES",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "35",
     producto: "CHICHON DULCE",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "36",
     producto: "CHICHON SECO",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "37",
@@ -159,22 +159,22 @@ const productos = [
   {
     clave: "351",
     producto: "CAMPECHANO",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "38",
     producto: "AMARETO DI SARONO",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "39",
     producto: "KHALUA",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "40",
     producto: "LICOR 43",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "98",
@@ -189,17 +189,17 @@ const productos = [
   {
     clave: "143",
     producto: "FRAN YAELICO",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "152",
     producto: "ZAMUCA VCO.",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "362",
     producto: "STREGA",
-    comision: "0",
+    comision: "1",
   },
   {
     clave: "57",
@@ -454,7 +454,7 @@ const productos = [
   {
     clave: "568",
     producto: "JARRA PINA COLADA C/RON",
-    comision: "0",
+    comision: "5",
   },
   {
     clave: "571",
