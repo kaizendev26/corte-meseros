@@ -7,6 +7,7 @@ const meseros = [
   { id: 6, nombre: "DELIA" },
   { id: 7, nombre: "FELIPE" },
   { id: 8, nombre: "YOSELIN" },
+  { id: 9, nombre: "RUBEN" },
 ];
 
 const obtenerTarjetasPorMesero = () => {
